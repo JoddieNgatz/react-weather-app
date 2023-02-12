@@ -2,6 +2,7 @@ import './App.css';
 import './weather/weather'
 //import Weather from './weather/weather';
 import CardComponent from './components/card';
+import { LoaderComponent } from './components/loader';
 import React, { useEffect, useState } from "react";
 
 
@@ -35,9 +36,7 @@ useEffect(()=>{
       {(typeof weatherData.main != 'undefined') ? (
         <CardComponent weatherData={weatherData}/>
       ): (
-        <div>
-          <p>Loading....</p>
-        </div>
+        <LoaderComponent />
       )}
       </header>
     </div>
