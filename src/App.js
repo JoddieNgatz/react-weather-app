@@ -2,7 +2,7 @@ import './App.css';
 import './weather/weather'
 //import Weather from './weather/weather';
 import CardComponent from './components/card';
-import { LoaderComponent } from './components/loader';
+import { Dimmer, Loader } from 'semantic-ui-react';
 import React, { useEffect, useState } from "react";
 
 
@@ -36,7 +36,11 @@ useEffect(()=>{
       {(typeof weatherData.main != 'undefined') ? (
         <CardComponent weatherData={weatherData}/>
       ): (
-        <LoaderComponent />
+        <div>
+    <Dimmer active>
+      <Loader>Loading..</Loader>
+    </Dimmer>
+ </div>
       )}
       </header>
     </div>
